@@ -39,7 +39,7 @@ pipeline{
                     usernameVariable:"dockerHubUser")]){
                         
                         sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                        sh "docker image tag two-tier-flask-app ${env.dockerHubUser}/flask-app"
+                        sh "docker image tag flask-app ${env.dockerHubUser}/flask-app"
                         sh "docker push ${env.dockerHubUser}/flask-app:latest"
                     }
                 
