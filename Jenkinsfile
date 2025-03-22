@@ -54,6 +54,14 @@ pipeline{
             }
         }    
         
+      post {
+          script{     
+          emailtext from: 'vishaltyagi178@gmail.com',
+          to: 'vishaltyagi178@gmail.com',
+          body: 'Build success',
+          subject: 'Build success',
+          }
+      }
         
     }
     
