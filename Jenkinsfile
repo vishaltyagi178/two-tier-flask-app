@@ -52,7 +52,8 @@ pipeline{
                 
                 sh "docker compose up -d --build flask-app"
             }
-        }    
+        } 
+    }
         
       post {
           script{     
@@ -62,7 +63,5 @@ pipeline{
           subject: 'Build success',
           }
       }
-        
-    }
     
 }
