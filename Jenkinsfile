@@ -53,20 +53,19 @@ pipeline{
                 sh "docker compose up -d --build flask-app"
             }
         }
+    }
         
      post {
           success{
-          script{     
-          emailtext (
-              from: 'vishaltyagi178@gmail.com',
+              script{     
+         emailtext from: 'vishaltyagi178@gmail.com',
           to: 'vishaltyagi178@gmail.com',
           body: 'Build success',
-          subject: 'Build success', 
-              )
+          subject: 'Build success',
           }
               
           }
       }
-    }
+    
     
 }
