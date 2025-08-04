@@ -14,6 +14,11 @@ pipeline{
                sh "docker build -t flask-app ."
             }   
         }
+        stage("Trivy filesytem scan"){
+            steps{
+                sh "trivy fs . -o results.jason"
+            }
+        }
         stage("Push image to docker hub"){
           steps{
                withCredentials([usernamePassword(
